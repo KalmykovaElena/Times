@@ -60,3 +60,26 @@ name.addEventListener("keypress", setName);
 showTime();
 setBg();
 getName();
+const setFocus = (event) => {
+  if (event.type === "keypress") {
+    if (event.key === "Enter") {
+      localStorage.setItem("focus", event.target.innerHTML);
+      getFocus();
+      focus.blur();
+    }
+    localStorage.setItem("focus", event.target.innerHTML);
+  }
+};
+
+const getFocus = () => {
+  if (
+    localStorage.getItem("focus") == null ||
+    localStorage.getItem("focus") == 0
+  ) {
+    focus.textContent = "[Enter focus]";
+  } else {
+    focus.textContent = localStorage.getItem("focus");
+  }
+};
+focus.addEventListener("keypress", setFocus);
+getFocus();

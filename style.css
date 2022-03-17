@@ -36,7 +36,7 @@ input {
   border-radius: 20px;
 }
 
-#textName {
+#textName, #focus{
     font-size: 5rem;
     color: rgb(37, 236, 160);
     text-shadow: 1px 1px 2px black, 0 0 1em rgb(229, 229, 250),
